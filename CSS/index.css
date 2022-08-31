@@ -1,0 +1,166 @@
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: inherit;
+}
+body{
+    box-sizing: border-box;
+}
+#toggler{
+    display: none;
+}
+html{
+    font-size: 10px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    font-size: 1.5rem;
+}
+.header .header__child:nth-child(1){
+    flex-basis: 25%;
+}
+
+.header .header__child:nth-child(2){
+    flex-basis: 75%;
+    
+}
+.header .header__child .nav{
+    display:flex;
+    justify-content: space-between;
+}
+.header .header__child .nav ul{
+    display:flex;  
+    list-style-type: none;
+}
+.header .header__child .nav ul li a{
+    text-decoration:none;
+    padding:15px;
+    color:inherit;
+    text-transform:capitalize;
+}
+.header .header__child:nth-child(1) img{
+    width: 150px;
+        
+}
+body{
+    color: black;
+    padding: 0 70px;
+
+}
+.banner{
+    background-color: #e6e6e6;
+    position: relative;
+    height: calc(70vh - 50px);
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.banner .bximg{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 55%;
+    height: 100%;
+
+}
+.bximg img{
+    width: 100%;
+    height: 100%;
+}
+.banner .content{
+    padding-left: 70px;
+}
+.banner .content h2{
+    font-size: 3rem;
+    text-transform: capitalize;
+}
+.banner .content p{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+}
+.btn{
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: inherit;
+}
+.btn-black{
+    background-color: #111;
+    color: #fff;
+}
+.banner .content .btn:nth-of-type(1){
+    margin-right: 4rem;
+}
+.header label{
+    display: none;
+}
+@media(max-width:1200px){
+
+    .header{
+        display: flex;
+        align-items: center;
+        height: 90px;
+        font-size: 1.5rem;
+
+        flex-direction: column;
+    }
+    body{
+        color: black;
+        padding: 0 10px;        
+    }
+   
+}
+@media(max-width:900px){
+    .header .header__child .nav{
+        display:block;
+        position: absolute;
+        width: 0px;
+        height: calc(100vh - 50px);
+        background-color:#e6e6e6;
+        top: 50px;
+        right: 0;
+        z-index: 10;
+        transition: width 0.2s;
+        overflow: hidden;
+    
+
+    }
+    .header label{
+        display: block;
+    }
+    .header .header__child .nav ul{
+        display:block;
+        
+    }
+
+    .header{
+        height: 50px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #toggler:checked + .nav{
+        width: 30rem;
+    }
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.row .item{
+    border: 0px solid;
+    flex: 1 0 190px;
+}
+/* .row .item .card{
+} */
+.row .item .card .imgBx img{
+    width: 100%;
+}
+.row .item:not(:last-of-type){
+    margin-right: 20px;
+}
